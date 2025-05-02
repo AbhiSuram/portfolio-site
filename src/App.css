@@ -1,38 +1,419 @@
-.App {
-  text-align: center;
+/* Hero Section Container */
+.hero--section {
+  display: flex; /* Align content horizontally */
+  align-items: center; /* Center vertically */
+  justify-content: space-between; /* Space between text and image */
+  padding: 4rem 8rem; /* Add padding around the section */
+  background-color: #f9f9f9; /* Light background color */
+  min-height: 100vh; /* Make it full viewport height */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Content Box (Text Side) */
+.hero--section--content--box {
+  flex: 1; /* Take up half the space */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Content Inside the Box */
+.hero--section--content {
+  max-width: 600px; /* Keep text readable, not too wide */
+}
+
+/* Section Title (Hey, I'm Abhi) */
+.section--title {
+  font-size: 2rem; /* Medium font size */
+  color: #555; /* Subtle gray color */
+  margin-bottom: 1rem; /* Space below */
+}
+
+/* Main Heading (Full Stack Developer) */
+.hero--section--title {
+  font-size: 5rem; /* Large font size for impact */
+  line-height: 1.2; /* Tight line spacing */
+  margin-bottom: 1rem; /* Space below */
+}
+
+/* Highlighted Part of Heading (Full Stack) */
+.hero--section--title--color {
+  color: #0070f3; /* Bright blue highlight */
+}
+
+/* Description Text */
+.hero--section--description {
+  font-size: 1.125rem; /* Slightly larger than body text */
+  color: #666; /* Muted gray for readability */
+  margin-bottom: 2rem; /* Space below */
+}
+
+/* Button Styling */
+.btn {
+  padding: 0.75rem 1.5rem; /* Add padding inside button */
+  border: none; /* Remove default border */
+  border-radius: 0.5rem; /* Rounded corners */
+  font-size: 1rem; /* Button text size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Primary Button Variant */
+.btn-primary {
+  background-color: #0070f3; /* Primary blue color */
+  color: white; /* White text */
+}
+
+/* Button Hover Effect */
+.btn-primary:hover {
+  background-color: #005bb5; /* Darker blue on hover */
+}
+
+/* Image Side */
+.hero--section--img {
+  flex: 1; /* Take up the other half */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Image Styling */
+.hero--section--img img {
+  width: 100%; /* Make image responsive */
+  max-width: 500px; /* Limit image size */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 1rem; /* Slightly rounded corners */
+  box-shadow: 0 4px 10px rgba(36, 182, 255, 0.1); /* Soft shadow */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero--section {
+      flex-direction: column; /* Stack content vertically on smaller screens */
+      padding: 2rem; /* Reduce padding */
+      text-align: center; /* Center text */
+  }
+
+  .hero--section--img {
+      margin-top: 3rem; /* Add space between text and image */
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+/* Portfolio Section Container */
+.port--section {
+  padding: 4rem 8rem;
+  border-radius: 1rem; /* Slightly rounded corners */
+  background-color: rgb(0, 0, 0);
+  background-size: cover;         /* Stretch the image to cover the entire section */
+  background-repeat: no-repeat;   /* Stop repeating the image */
+  background-position: center;    /* Center the image nicely */
+  overflow: hidden; /* Clip overlay if needed */
+}
+
+/* Title at the Top */
+.port--section--header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.port--section--title {
+  font-size: 3rem;
+  color: #0070f3;
+}
+
+/* Projects Container */
+.port--projects {
   display: flex;
   flex-direction: column;
+  gap: 4rem;
+}
+
+/* Each Project Row */
+.project {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 9rem;
+  padding: 2rem; /* Add padding inside each project block */
+  border-radius: 1rem;
+}
+
+/* Alternate Layout for Reversed Projects */
+.project.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Background Colors */
+.p1 {
+  color: #0070f3;
+  background-color: white; /* First and third projects */
+}
+
+.p2 {
+  color:white;
+  background-color: #0070f3; /* Second project */
+}
+
+/* Project Image */
+.project--image {
+  flex: 1;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Project Text */
+.project--text {
+  flex: 1;
+}
+
+.project--text h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.project--text p {
+  font-size: 1.125rem;
+}
+
+/* Responsive (Mobile) */
+@media (max-width: 768px) {
+  .project {
+    flex-direction: column;
+  }
+  .project.reverse {
+    flex-direction: column;
+  }
+  .project--image, .project--text {
+    width: 100%;
+  }
+}
+/* Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+.navbar img {
+  height: 40px;
+}
+
+/* Hamburger Icon */
+.nav__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.nav__hamburger__line {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  transition: all 0.3s ease;
+}
+
+/* Navbar Items Container */
+.navbar--items {
+  display: flex;
+  align-items: center;
+  transition: max-height 0.3s ease;
+}
+
+.navbar--items ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar Links (default state) */
+.navbar--content {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem; /* Add padding to make the hover area larger */
+  border-radius: 0.5rem; /* Slight rounding */
+  display: block; /* Ensure the whole area is clickable */
+}
+
+/* Hover and Active State (background highlight) */
+.navbar--content:hover,
+.navbar--active-content {
+  background-color: #0070f3; /* Blue background */
+  color: white; /* White text */
+}
+
+/* Contact Button */
+.btn {
+  padding: 0.5rem 1rem;
+  border: 2px solid #0070f3;
+  background: none;
+  color: #0070f3;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 1rem;
+  margin-left: 1rem;
+}
+
+.btn:hover {
+  background-color: #0070f3;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Hamburger Animation */
+.nav__hamburger.active .nav__hamburger__line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.nav__hamburger.active .nav__hamburger__line:nth-child(2) {
+  opacity: 0;
+}
+.nav__hamburger.active .nav__hamburger__line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Responsive Layout */
+@media (max-width: 768px) {
+
+  .navbar--content {
+    width: 100%; /* Make links full width in dropdown */
+    text-align: center; /* Center the text */
   }
-  to {
-    transform: rotate(360deg);
+  
+  /* Show Hamburger */
+  .nav__hamburger {
+      display: flex;
   }
+
+  /* Stack Navbar Items */
+  .navbar--items {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: white;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+      max-height: 0; /* Collapse by default */
+  }
+
+  /* Expand when active */
+  .navbar--items.active {
+      max-height: 500px; /* Large enough to show all items */
+  }
+
+  .navbar--items ul {
+      flex-direction: column;
+      gap: 1rem; /* Vertical spacing between links */
+      padding: 1rem 0;
+  }
+
+  /* Contact Button stacks with links */
+  .btn {
+      margin-left: 0;
+      margin-top: 1rem;
+  }
+}
+
+.footer--container {
+  background-color: #f8f9fa;
+  padding: 40px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1500px; /* NEW */
+  margin: 0 auto; /* NEW */
+  box-sizing: border-box; /* SUPER important */
+}
+
+.footer--items ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.footer--items ul li {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.footer--items ul li .text-md {
+  color: blue;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer--items ul li .text-md:hover {
+  color: darkblue;
+}
+
+.footer--social--icon ul {
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+  margin: 20px 0 0 0;
+}
+
+.footer--social--icon ul li a svg {
+  transition: transform 0.3s;
+}
+
+.footer--social--icon ul li a:hover svg {
+  transform: scale(1.2);
+}
+
+.divider {
+  width: 90%;
+  margin: 30px 0;
+  border: 1px solid #ccc;
+}
+
+.footer--content--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer--content {
+  font-size: 14px;
+  color: #555;
+}
+
+.footer--content--container ul {
+  display: flex;
+  gap: 1px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer--content--container ul li .text-sm {
+  font-size: 14px;
+  color: blue;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer--content--container ul li .text-sm:hover {
+  color: darkblue;
 }
